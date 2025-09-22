@@ -12,6 +12,8 @@ jobs:
       id-token: write
       pages: write
       contents: read
+    environment:
+      name: github-pages
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
