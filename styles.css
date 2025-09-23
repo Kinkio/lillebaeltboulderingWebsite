@@ -93,7 +93,8 @@ main {
 }
 
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23444" width="1200" height="800"/><text x="600" y="400" font-family="Arial" font-size="48" fill="%23666" text-anchor="middle">Bouldering Image</text></svg>');
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(52, 73, 94, 0.8) 100%), 
+                linear-gradient(45deg, #2c3e50 0%, #34495e 25%, #2c3e50 50%, #34495e 75%, #2c3e50 100%);
     background-size: cover;
     background-position: center;
     height: 70vh;
@@ -102,6 +103,45 @@ main {
     justify-content: center;
     text-align: center;
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 15% 25%, rgba(231, 76, 60, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(41, 128, 185, 0.1) 0%, transparent 35%),
+        radial-gradient(circle at 25% 75%, rgba(231, 76, 60, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 75% 85%, rgba(52, 73, 94, 0.12) 0%, transparent 40%);
+    z-index: 1;
+}
+
+.hero::after {
+    content: '🧗‍♂️ 🏔️ 🧗‍♀️ 🪨 🧗‍♂️ 🏔️ 🧗‍♀️ 🪨 🧗‍♂️ 🏔️';
+    position: absolute;
+    bottom: -20px;
+    left: -100%;
+    width: 200%;
+    font-size: 2rem;
+    opacity: 0.1;
+    animation: scroll 30s linear infinite;
+    z-index: 1;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
