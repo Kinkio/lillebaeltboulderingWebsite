@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lillebælt Bouldering Club - Climbing Community in Denmark</title>
-    <meta name="description" content="Join Lillebælt Bouldering Club - Denmark's premier indoor and outdoor bouldering community. Climbing for all levels, events, and training.">
+    <title>Little Belt Bouldering Club - Climbing Community in Denmark</title>
+    <meta name="description" content="Join Little Belt Bouldering Club - Denmark's premier indoor and outdoor bouldering community. Climbing for all levels, events, and training.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Lillebælt Bouldering</div>
+            <div class="logo">Little Belt Bouldering</div>
+            <button class="burger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -25,7 +30,7 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Welcome to Lillebælt Bouldering Club</h1>
+                <h1>Welcome to Little Belt Bouldering Club</h1>
                 <p>Join Denmark's most vibrant climbing community. Experience the thrill of bouldering with climbers of all levels.</p>
                 <a href="#membership" class="cta-button">Join Us Today</a>
             </div>
@@ -108,13 +113,13 @@
             <div class="contact-grid">
                 <div class="contact-item">
                     <h3>📧 Email Us</h3>
-                    <p>info@lillebaeltbouldering.dk</p>
+                    <p>info@littlebeltbouldering.com</p>
                     <p>For general inquiries and membership information</p>
                 </div>
                 <div class="contact-item">
                     <h3>📱 Social Media</h3>
                     <p>Follow us on Instagram and Facebook for updates, photos, and community discussions</p>
-                    <p>@lillebaeltbouldering</p>
+                    <p>@littlebeltbouldering</p>
                 </div>
                 <div class="contact-item">
                     <h3>📍 Meet Us</h3>
@@ -132,10 +137,37 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Lillebælt Bouldering Club. All rights reserved. | Building Denmark's climbing community, one boulder at a time.</p>
+        <p>&copy; 2024 Little Belt Bouldering Club. All rights reserved. | Building Denmark's climbing community, one boulder at a time.</p>
     </footer>
 
     <script>
+        // Burger menu functionality
+        const burgerMenu = document.querySelector('.burger-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        burgerMenu.addEventListener('click', function() {
+            const isOpen = navLinks.classList.contains('active');
+            
+            if (isOpen) {
+                navLinks.classList.remove('active');
+                burgerMenu.classList.remove('active');
+                burgerMenu.setAttribute('aria-expanded', 'false');
+            } else {
+                navLinks.classList.add('active');
+                burgerMenu.classList.add('active');
+                burgerMenu.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        // Close menu when clicking on a link (for mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                burgerMenu.classList.remove('active');
+                burgerMenu.setAttribute('aria-expanded', 'false');
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
