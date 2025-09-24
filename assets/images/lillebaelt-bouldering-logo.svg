@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Define colors from the palette -->
+    <style>
+      .bg-color { fill: #f2e9da; }
+      .yellow-color { fill: #edae3e; }
+      .gray-color { fill: #3d414c; }
+      .orange-color { fill: #c16b45; }
+      .salmon-color { fill: #ca7e61; }
+      .text-color { fill: #3d414c; }
+    </style>
+  </defs>
+  
+  <!-- Background circle for logo -->
+  <circle cx="30" cy="30" r="25" class="bg-color" stroke="#3d414c" stroke-width="2"/>
+  
+  <!-- Mountain/rock shapes -->
+  <path d="M 15 35 L 25 20 L 35 25 L 45 35 Z" class="gray-color"/>
+  <path d="M 20 35 L 30 18 L 40 30 Z" class="orange-color"/>
+  <path d="M 25 35 L 35 15 L 42 28 Z" class="salmon-color"/>
+  
+  <!-- Climbing holds -->
+  <circle cx="22" cy="28" r="2" class="yellow-color"/>
+  <circle cx="35" cy="25" r="2" class="yellow-color"/>
+  <circle cx="28" cy="32" r="2" class="yellow-color"/>
+  
+  <!-- Text -->
+  <text x="65" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" class="text-color">
+    Lillebælt
+  </text>
+  <text x="65" y="45" font-family="Arial, sans-serif" font-size="16" font-weight="normal" class="text-color">
+    Bouldering
+  </text>
+</svg>
