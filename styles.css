@@ -122,10 +122,21 @@ main {
 }
 
 .hero {
-    background: linear-gradient(135deg, rgba(61, 65, 76, 0.8) 0%, rgba(61, 65, 76, 0.9) 100%), 
-                linear-gradient(45deg, var(--lb-gray) 0%, var(--lb-orange) 25%, var(--lb-salmon) 50%, var(--lb-orange) 75%, var(--lb-gray) 100%);
+    /* Placeholder background image - replace with actual bouldering image */
+    background: 
+        linear-gradient(135deg, rgba(61, 65, 76, 0.7) 0%, rgba(61, 65, 76, 0.8) 100%),
+        /* Fallback pattern that suggests rock texture */
+        radial-gradient(circle at 20% 20%, #8B7D6B 0%, transparent 20%),
+        radial-gradient(circle at 80% 40%, #A0937D 0%, transparent 20%),
+        radial-gradient(circle at 40% 80%, #736B5E 0%, transparent 20%),
+        radial-gradient(circle at 80% 20%, #9C8F7D 0%, transparent 20%),
+        radial-gradient(circle at 20% 60%, #8B7355 0%, transparent 20%),
+        linear-gradient(45deg, #7A6F5D 0%, #8B7D6B 25%, #A0937D 50%, #736B5E 75%, #9C8F7D 100%);
+    /* Uncomment the line below and replace with actual image path when available */
+    /* background-image: url('assets/images/bouldering-background.jpg'); */
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     height: 70vh;
     display: flex;
     align-items: center;
@@ -143,11 +154,9 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
+    /* Subtle overlay to ensure text readability while preserving background */
     background-image: 
-        radial-gradient(circle at 15% 25%, rgba(231, 76, 60, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 85% 15%, rgba(41, 128, 185, 0.1) 0%, transparent 35%),
-        radial-gradient(circle at 25% 75%, rgba(231, 76, 60, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 75% 85%, rgba(52, 73, 94, 0.12) 0%, transparent 40%);
+        radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
     z-index: 1;
 }
 
