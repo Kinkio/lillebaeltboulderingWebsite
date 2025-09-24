@@ -1,5 +1,22 @@
 /* Lillebælt Bouldering Club Website Styles */
 
+/* Color Palette */
+:root {
+    /* Primary Brand Colors */
+    --lb-background: #f2e9da;      /* Baggrund + LOGO-tekst */
+    --lb-yellow: #edae3e;          /* Gul i LOGO + grafik */
+    --lb-gray: #3d414c;            /* Grå i LOGO + grafik */
+    --lb-orange: #c16b45;          /* Orange til grafik */
+    --lb-salmon: #ca7e61;          /* "Laks" til grafik */
+    --lb-green: #75a286;           /* Grøn (optional) */
+    --lb-light-green: #a8aca1;     /* Lys grøn (optional) */
+    
+    /* Legacy colors for compatibility */
+    --text-primary: #333;
+    --text-secondary: #666;
+    --background-light: #f4f4f4;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,13 +26,13 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    color: var(--lb-gray);
+    background-color: var(--lb-background);
 }
 
 header {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--lb-gray) 0%, rgba(61, 65, 76, 0.9) 100%);
+    color: var(--lb-background);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
@@ -35,8 +52,20 @@ nav {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.logo-text {
+    display: inline-block;
 }
 
 /* Burger Menu Styles */
@@ -85,7 +114,7 @@ nav {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #e74c3c;
+    color: var(--lb-yellow);
 }
 
 main {
@@ -93,8 +122,8 @@ main {
 }
 
 .hero {
-    background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(52, 73, 94, 0.8) 100%), 
-                linear-gradient(45deg, #2c3e50 0%, #34495e 25%, #2c3e50 50%, #34495e 75%, #2c3e50 100%);
+    background: linear-gradient(135deg, rgba(61, 65, 76, 0.8) 0%, rgba(61, 65, 76, 0.9) 100%), 
+                linear-gradient(45deg, var(--lb-gray) 0%, var(--lb-orange) 25%, var(--lb-salmon) 50%, var(--lb-orange) 75%, var(--lb-gray) 100%);
     background-size: cover;
     background-position: center;
     height: 70vh;
@@ -158,8 +187,8 @@ main {
 
 .cta-button {
     display: inline-block;
-    background: #e74c3c;
-    color: white;
+    background: var(--lb-orange);
+    color: var(--lb-background);
     padding: 12px 30px;
     text-decoration: none;
     border-radius: 5px;
@@ -168,7 +197,7 @@ main {
 }
 
 .cta-button:hover {
-    background: #c0392b;
+    background: var(--lb-salmon);
 }
 
 .section {
@@ -187,7 +216,7 @@ h2 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 3rem;
-    color: #2c3e50;
+    color: var(--lb-gray);
 }
 
 .features {
@@ -206,7 +235,7 @@ h2 {
 }
 
 .feature h3 {
-    color: #2c3e50;
+    color: var(--lb-gray);
     margin-bottom: 1rem;
 }
 
@@ -225,13 +254,13 @@ h2 {
 }
 
 .contact-item h3 {
-    color: #2c3e50;
+    color: var(--lb-gray);
     margin-bottom: 0.5rem;
 }
 
 footer {
-    background: #2c3e50;
-    color: white;
+    background: var(--lb-gray);
+    color: var(--lb-background);
     text-align: center;
     padding: 2rem 0;
 }
@@ -242,13 +271,21 @@ footer {
         display: flex;
     }
     
+    .logo img {
+        height: 32px; /* Smaller on mobile */
+    }
+    
+    .logo-text {
+        font-size: 1.2rem; /* Smaller text on mobile */
+    }
+    
     .nav-links {
         position: fixed;
         top: 80px;
         left: 0;
         width: 100%;
         height: calc(100vh - 80px);
-        background: rgba(44, 62, 80, 0.98);
+        background: rgba(61, 65, 76, 0.98);
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
