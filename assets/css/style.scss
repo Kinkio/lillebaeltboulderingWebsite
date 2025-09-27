@@ -68,11 +68,13 @@ nav {
 
 .logo a {
     display: block;
+    text-decoration: none;
 }
 
 .logo img {
     height: 50px;
     width: auto;
+    display: block;
 }
 
 .nav-links {
@@ -118,9 +120,10 @@ nav {
 }
 
 main {
-    background: linear-gradient(135deg, #e8dcc6 0%, var(--lb-background) 100%);
     flex: 1;
     padding-top: 80px; /* Account for fixed header */
+    background: linear-gradient(135deg, var(--lb-background) 0%, #e8dcc6 100%);
+    min-height: calc(100vh - 80px);
 }
 
 .hero {
@@ -134,9 +137,10 @@ main {
 }
 
 .hero-logo {
-    height: 150px;
-    width: auto;
-    margin-bottom: 2rem;
+    height: 150px !important;
+    width: auto !important;
+    margin-bottom: 2rem !important;
+    display: block !important;
 }
 
 .hero h1 {
@@ -172,6 +176,13 @@ main {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.section-alt {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    margin: 2rem auto;
+    backdrop-filter: blur(5px);
 }
 
 .section h2 {
@@ -267,10 +278,11 @@ footer p {
         flex-direction: column;
         padding: 1rem;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 999;
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-links li {
@@ -285,7 +297,7 @@ footer p {
     }
 
     .burger-menu {
-        display: flex;
+        display: flex !important;
     }
 
     .burger-menu.active .burger-line:nth-child(1) {
