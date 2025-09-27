@@ -1,0 +1,349 @@
+---
+---
+/* Lillebælt Bouldering Club Website Styles */
+
+/* Color Palette */
+:root {
+    /* Primary Brand Colors */
+    --lb-background: #f2e9da;      /* Baggrund + LOGO-tekst */
+    --lb-yellow: #edae3e;          /* Gul i LOGO + grafik */
+    --lb-gray: #3d414c;            /* Grå i LOGO + grafik */
+    --lb-orange: #c16b45;          /* Orange til grafik */
+    --lb-salmon: #ca7e61;          /* "Laks" til grafik */
+    --lb-green: #75a286;           /* Grøn (optional) */
+    --lb-light-green: #a8aca1;     /* Lys grøn (optional) */
+    
+    /* Legacy colors for compatibility */
+    --text-primary: #333;
+    --text-secondary: #666;
+    --background-light: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--lb-gray);
+    background-color: var(--lb-background);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Remove background from all images */
+img {
+    background: transparent;
+    border: none;
+}
+
+header {
+    background: linear-gradient(135deg, var(--lb-gray) 0%, rgba(61, 65, 76, 0.9) 100%);
+    color: var(--lb-background);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo a {
+    display: block;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--lb-background);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--lb-yellow);
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--lb-background);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+main {
+    flex: 1;
+    padding-top: 80px; /* Account for fixed header */
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--lb-background) 0%, #e8dcc6 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-logo {
+    height: 150px;
+    width: auto;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--lb-gray);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--lb-gray);
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--lb-orange) 0%, var(--lb-salmon) 100%);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-alt {
+    background: linear-gradient(135deg, #e8dcc6 0%, var(--lb-background) 100%);
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--lb-gray);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--lb-gray);
+}
+
+.feature p {
+    color: var(--lb-gray);
+    line-height: 1.6;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--lb-gray);
+}
+
+.contact-item p {
+    color: var(--lb-gray);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    background: var(--lb-gray);
+    color: var(--lb-background);
+    text-align: center;
+    padding: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--lb-gray);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+        margin-left: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(242, 233, 218, 0.2);
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .burger-menu.active .burger-line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-menu.active .burger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active .burger-line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-logo {
+        height: 100px;
+    }
+
+    nav {
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}

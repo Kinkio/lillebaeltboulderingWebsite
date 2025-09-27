@@ -6,10 +6,9 @@ url: "https://your-username.github.io" # Update this with your GitHub Pages URL
 
 # Build settings
 markdown: kramdown
-remote_theme: pages-themes/architect@v0.2.0
+# remote_theme: pages-themes/architect@v0.2.0  # Commented out to use custom styles
 
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
