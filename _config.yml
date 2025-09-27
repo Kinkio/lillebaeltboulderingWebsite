@@ -1,0 +1,31 @@
+# Site settings
+title: Lillebælt Bouldering
+description: Bouldering fællesskab i Middelfart og omegn. Klatring for alle niveauer, events og træning.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://your-username.github.io" # Update this with your GitHub Pages URL
+
+# Build settings
+markdown: kramdown
+remote_theme: pages-themes/architect@v0.2.0
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Collections (if needed for future content)
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/

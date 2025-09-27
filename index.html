@@ -1,32 +1,14 @@
-<!DOCTYPE html>
-<html lang="da">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lillebælt Bouldering - Middelfart og Omegn</title>
-    <meta name="description" content="Bliv medlem af Lillebælt Bouldering - Bouldering fællesskab. Klatring for alle niveauer, events og træning.">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Header will be included here -->
-    <div id="header-placeholder"></div>
+---
+layout: default
+title: Lillebælt Bouldering - Middelfart og Omegn
+description: Bliv medlem af Lillebælt Bouldering - Bouldering fællesskab. Klatring for alle niveauer, events og træning.
+---
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <img src="assets/images/logo.jpg" alt="Lillebælt Bouldering Logo" class="hero-logo">
-                <h1>Velkommen til Lillebælt Bouldering</h1>
-                <p>Bliv en del af Danmarks mest livlige klatrefællesskab. Oplev spændingen ved bouldering sammen med klatrere på alle niveauer.</p>
-                <a href="https://lillebaeltbouldering.unioo.info/subscriptions" class="cta-button">Bliv Medlem I Dag</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Lillebælt Bouldering.</p>
-    </footer>
-
-    <script src="javascript/load-index-header.js"></script>
-
-</body>
-</html>
+<section id="home" class="hero">
+    <div class="hero-content">
+        <img src="{{ '/assets/images/logo.jpg' | relative_url }}" alt="Lillebælt Bouldering Logo" class="hero-logo">
+        <h1>Velkommen til Lillebælt Bouldering</h1>
+        <p>Bliv en del af Danmarks mest livlige klatrefællesskab. Oplev spændingen ved bouldering sammen med klatrere på alle niveauer.</p>
+        <a href="https://lillebaeltbouldering.unioo.info/subscriptions" class="cta-button">Bliv Medlem I Dag</a>
+    </div>
+</section>

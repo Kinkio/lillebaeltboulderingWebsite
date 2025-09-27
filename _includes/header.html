@@ -1,7 +1,7 @@
 <header>
     <nav>
         <div class="logo">
-            <img src="assets/images/logo.jpg" alt="Lillebælt Bouldering Logo">
+            <img src="{{ '/assets/images/logo.jpg' | relative_url }}" alt="Lillebælt Bouldering Logo">
         </div>
         <button type="button" class="burger-menu" aria-label="Åbn/luk navigationsmenu" aria-expanded="false">
             <span class="burger-line"></span>
@@ -9,11 +9,11 @@
             <span class="burger-line"></span>
         </button>
         <ul class="nav-links">
-            <li><a href="index.html">Hjem</a></li>
-            <li><a href="pages/about.html">Om Os</a></li>
-            <li><a href="pages/bouldering.html">Bouldering</a></li>
+            <li><a href="{{ '/' | relative_url }}">Hjem</a></li>
+            <li><a href="{{ '/about' | relative_url }}">Om Os</a></li>
+            <li><a href="{{ '/bouldering' | relative_url }}">Bouldering</a></li>
             <li><a href="https://lillebaeltbouldering.unioo.info/subscriptions">Medlemskab</a></li>
-            <li><a href="pages/contact.html">Kontakt</a></li>
+            <li><a href="{{ '/contact' | relative_url }}">Kontakt</a></li>
         </ul>
     </nav>
 </header>
