@@ -118,6 +118,7 @@ nav {
 }
 
 main {
+    background: linear-gradient(135deg, #e8dcc6 0%, var(--lb-background) 100%);
     flex: 1;
     padding-top: 80px; /* Account for fixed header */
 }
@@ -172,10 +173,6 @@ main {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.section-alt {
-    background: linear-gradient(135deg, #e8dcc6 0%, var(--lb-background) 100%);
 }
 
 .section h2 {
