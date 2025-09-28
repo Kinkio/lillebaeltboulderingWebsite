@@ -2,11 +2,15 @@
 title: Lillebælt Bouldering
 description: Bouldering fællesskab i Middelfart og omegn. Klatring for alle niveauer, events og træning.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://your-username.github.io" # Update this with your GitHub Pages URL
+url: "https://kinkio.github.io/lillebaeltboulderingWebsite" # Update this with your GitHub Pages URL
 
 # Build settings
 markdown: kramdown
 # remote_theme: pages-themes/architect@v0.2.0  # Commented out to use custom styles
+
+# Sass configuration
+sass:
+  style: compressed
 
 plugins:
   - jekyll-feed
