@@ -4,6 +4,10 @@ description: Bouldering fællesskab i Middelfart og omegn. Klatring for alle niv
 baseurl: "/lillebaeltboulderingWebsite" # the subpath of your site, e.g. /blog
 url: "https://kinkio.github.io" # Update this with your GitHub Pages URL
 
+# Environment variables (populated during build)
+env:
+  GOOGLE_SCRIPT_URL: "" # Will be populated from GitHub secretsWill be populated from GitHub secrets
+
 # Build settings
 markdown: kramdown
 # remote_theme: pages-themes/architect@v0.2.0  # Commented out to use custom styles

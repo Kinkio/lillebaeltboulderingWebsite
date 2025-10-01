@@ -1,0 +1,87 @@
+---
+layout: default
+title: Ansvarsfraskrivelse
+description: Ansvarsfraskrivelse for deltagelse i bouldering aktiviteter hos Lillebælt Bouldering. Læs og accepter vilkårene før deltagelse.
+permalink: /ansvarsfraskrivelse/
+custom_js:
+  - waiver-form.js
+---
+
+<section id="ansvarsfraskrivelse" class="section">
+    <h2>Ansvarsfraskrivelse og Samtykke</h2>
+    <div class="form-container">
+        <div class="waiver-content">
+            <h3>Vigtig Information om Risici ved Bouldering</h3>
+            <p>Bouldering er en fysisk aktivitet, der indebærer iboende risici. Ved at deltage i aktiviteter arrangeret af Lillebælt Bouldering anerkender og accepterer du følgende:</p>
+            
+            <div class="risk-section">
+                <h4>🧗‍♀️ Risici ved Bouldering</h4>
+                <ul>
+                    <li>Fald fra klatrevægge eller naturlige formationer</li>
+                    <li>Muskel- og ledskader</li>
+                    <li>Hudafskrabninger og blå mærker</li>
+                    <li>Kollision med andre klatrere eller udstyr</li>
+                    <li>Fejl i udstyr eller sikkerhedsforanstaltninger</li>
+                    <li>Utilstrækkelig vejledning eller instruktion</li>
+                </ul>
+            </div>
+            
+            <div class="responsibility-section">
+                <h4>⚠️ Dit Ansvar</h4>
+                <p>Du anerkender, at:</p>
+                <ul>
+                    <li>Du deltager på eget ansvar og egen risiko</li>
+                    <li>Du er i tilstrækkelig fysisk form til at deltage</li>
+                    <li>Du vil følge alle sikkerhedsinstruktioner</li>
+                    <li>Du vil inspicere alt udstyr før brug</li>
+                    <li>Du vil informere om eventuelle helbredsproblemer</li>
+                </ul>
+            </div>
+        </div>
+        
+        <form id="waiverForm" class="waiver-form">
+            <h3>Personlige Oplysninger</h3>
+            
+            <div class="form-group">
+                <label for="fullName">Fulde Navn *</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="birthDate">Fødselsdato *</label>
+                <input type="date" id="birthDate" name="birthDate" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Telefonnummer *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Adresse *</label>
+                <textarea id="address" name="address" rows="3" required placeholder="Gade, postnummer, by"></textarea>
+            </div>  
+            
+            <h3>Samtykke og Ansvarsfraskrivelse</h3>
+            
+            <div class="consent-section">
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="riskAcknowledgment" name="riskAcknowledgment" required>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            
+            <button type="submit" class="submit-btn waiver-submit">
+                <span class="btn-text">Accepter og Send Ansvarsfraskrivelse</span>
+                <span class="btn-loading">Sender...</span>
+            </button>
+            <div id="waiverMessage" class="form-message"></div>
+        </form>
+    </div>
+</section>
