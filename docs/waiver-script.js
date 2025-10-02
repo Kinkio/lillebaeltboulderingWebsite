@@ -10,9 +10,17 @@
  * 6. Copy the Web App URL and add to GitHub Secrets as WAIVER_SCRIPT_URL
  */
 
-// Replace with your actual Google Spreadsheet ID
-const WAIVER_SPREADSHEET_ID = 'WAIVER_SCRIPT_URL';
+// Replace with your actual Google Spreadsheet ID (not the script URL!)
+// This should be the long ID from your Google Sheets URL: 
+// https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID_HERE/edit
+const WAIVER_SPREADSHEET_ID = '1_i61aT_8negN2Via9UU-4lwfLAG7-sWEcCRw28K4sCY';
 const WAIVER_SHEET_NAME = 'ansvarsfraskrivelse';
+
+function doGet() {
+  return ContentService
+    .createTextOutput('Google Apps Script is working!')
+    .setMimeType(ContentService.MimeType.TEXT);
+}
 
 function doPost(e) {
   try {
@@ -70,7 +78,10 @@ function doPost(e) {
         status: 'success',
         message: 'Waiver submitted successfully'
       }))
-      .setMimeType(ContentService.MimeType.JSON);
+      .setMimeType(ContentService.MimeType.JSON)
+      .setHeader('Access-Control-Allow-Origin', '*')
+      .setHeader('Access-Control-Allow-Methods', 'POST')
+      .setHeader('Access-Control-Allow-Headers', 'Content-Type');
       
   } catch (error) {
     console.error('Error processing waiver submission:', error);
