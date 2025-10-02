@@ -1,0 +1,28 @@
+---
+layout: default
+title: Debug Environment
+---
+
+<h2>Debug Environment Variables</h2>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const info = {
+        'Jekyll Environment': '{{ jekyll.environment }}',
+        'WAIVER_SCRIPT_URL from site.env': '{{ site.env.WAIVER_SCRIPT_URL }}',
+        'Config Object': window.LillebaeltConfig,
+        'Current Location': window.location.href
+    };
+    
+    const container = document.createElement('div');
+    container.innerHTML = '<h3>Debug Information:</h3>';
+    
+    for (const [key, value] of Object.entries(info)) {
+        const p = document.createElement('p');
+        p.innerHTML = `<strong>${key}:</strong> ${JSON.stringify(value)}`;
+        container.appendChild(p);
+    }
+    
+    document.body.appendChild(container);
+});
+</script>

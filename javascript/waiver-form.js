@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get configuration (fallback if config not loaded)
     const WAIVER_SCRIPT_URL = window.LillebaeltConfig?.WAIVER_SCRIPT_URL || '';
     
+    // Debug logging
+    console.log('LillebaeltConfig:', window.LillebaeltConfig);
+    console.log('WAIVER_SCRIPT_URL:', WAIVER_SCRIPT_URL);
+    
     const form = document.getElementById('waiverForm');
     if (!form) {
         console.error('Waiver form not found');
