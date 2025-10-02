@@ -118,10 +118,8 @@ nav {
 }
 
 main {
-    flex: 1;
     padding-top: 80px; /* Account for fixed header */
     background: linear-gradient(135deg, var(--lb-background) 0%, #e8dcc6 100%);
-    min-height: calc(100vh - 80px);
 }
 
 .hero {
