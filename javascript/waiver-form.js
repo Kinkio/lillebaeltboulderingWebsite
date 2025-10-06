@@ -3,11 +3,18 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Get configuration (fallback if config not loaded)
-    const WAIVER_SCRIPT_URL = window.LillebaeltConfig?.WAIVER_SCRIPT_URL || '';
+    let WAIVER_SCRIPT_URL = window.LillebaeltConfig?.WAIVER_SCRIPT_URL || '';
     
     // Debug logging
     console.log('LillebaeltConfig:', window.LillebaeltConfig);
     console.log('WAIVER_SCRIPT_URL:', WAIVER_SCRIPT_URL);
+    console.log('WAIVER_SCRIPT_URL length:', WAIVER_SCRIPT_URL?.length);
+    console.log('Config debug:', window.LillebaeltConfig?.DEBUG_INFO);
+    
+    // For testing: if we're on GitHub Pages and no URL, provide a test message
+    if (window.location.hostname === 'kinkio.github.io' && (!WAIVER_SCRIPT_URL || WAIVER_SCRIPT_URL.trim() === '')) {
+        console.log('GitHub Pages detected but no script URL configured');
+    }
     
     const form = document.getElementById('waiverForm');
     if (!form) {
@@ -89,12 +96,15 @@ document.addEventListener('DOMContentLoaded', function() {
             data.formType = 'Ansvarsfraskrivelse';
             
             console.log('WAIVER_SCRIPT_URL:', WAIVER_SCRIPT_URL);
+            console.log('WAIVER_SCRIPT_URL length:', WAIVER_SCRIPT_URL?.length);
+            console.log('Config debug:', window.LillebaeltConfig?.DEBUG_INFO);
             console.log('Submitting form data:', data);
             
             // If no URL is configured, simulate success for testing
-            if (!WAIVER_SCRIPT_URL || WAIVER_SCRIPT_URL === '' || WAIVER_SCRIPT_URL === 'YOUR_WAIVER_GOOGLE_APPS_SCRIPT_URL') {
+            if (!WAIVER_SCRIPT_URL || WAIVER_SCRIPT_URL.trim() === '' || WAIVER_SCRIPT_URL === 'YOUR_WAIVER_GOOGLE_APPS_SCRIPT_URL') {
                 console.log('Test mode: No Google Apps Script URL configured');
-                showMessage('TEST MODE: Oplysninger blev ikke sendt (ingen Google Apps Script URL konfigureret).', 'warning');
+                console.log('URL value:', JSON.stringify(WAIVER_SCRIPT_URL));
+                showMessage('TEST MODE: Oplysninger blev ikke sendt (ingen Google Apps Script URL konfigureret). URL: ' + (WAIVER_SCRIPT_URL || 'undefined'), 'warning');
                 form.reset();
                 return;
             }

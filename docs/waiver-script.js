@@ -14,7 +14,7 @@
 // This should be the long ID from your Google Sheets URL: 
 // https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID_HERE/edit
 const WAIVER_SPREADSHEET_ID = '1_i61aT_8negN2Via9UU-4lwfLAG7-sWEcCRw28K4sCY';
-const WAIVER_SHEET_NAME = 'ansvarsfraskrivelse';
+const WAIVER_SHEET_NAME = 'Ansvarsfraskrivelse';
 
 function doGet() {
   return ContentService

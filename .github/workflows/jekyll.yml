@@ -32,8 +32,24 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
       
+      - name: Debug Environment
+        run: |
+          echo "Checking environment variables..."
+          echo "JEKYLL_ENV: $JEKYLL_ENV"
+          if [ -n "$WAIVER_SCRIPT_URL" ]; then
+            echo "WAIVER_SCRIPT_URL is set (length: ${#WAIVER_SCRIPT_URL})"
+            echo "First 20 chars: ${WAIVER_SCRIPT_URL:0:20}..."
+          else
+            echo "WAIVER_SCRIPT_URL is NOT set"
+          fi
+        env:
+          JEKYLL_ENV: production
+          WAIVER_SCRIPT_URL: ${{ secrets.WAIVER_SCRIPT_URL }}
+          
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: |
+          echo "Building with Jekyll..."
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
           WAIVER_SCRIPT_URL: ${{ secrets.WAIVER_SCRIPT_URL }}
